@@ -1,19 +1,23 @@
 const express = require("express");
+const path =require('path')
+const eliteControllersPath = path.join(__dirname, '../controllers/eliteControllers');
+const middlerwarePath = path.join(__dirname,"../middlewares/authenticate")
 const {
-  logoutUser,
-  loginUser,
-  registerUser,checkLoggedIn
-} = require("./../controllers/eliteControllers");
+  registerUserreq,
+  loginUserreq,
+  logoutUserreq,
+  checkLoggedIn
+} = require(eliteControllersPath);
 const {
   isAuthenticated,
   authorizeRoles,
-} = require("./../middlewares/authenticate");
+} = require(middlerwarePath);
 
 const router = express.Router();
 
-router.route("/elite/Register").post(registerUser);
-router.route("/elite/login").post(loginUser);
-router.route("/elite/logout").get(logoutUser);
+router.route("/elite/Register").post(registerUserreq);
+router.route("/elite/login").post(loginUserreq);
+router.route("/elite/logout").get(logoutUserreq);
 router.route("/elite/isLoggedin").get(checkLoggedIn);
 
 

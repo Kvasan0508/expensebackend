@@ -3,7 +3,6 @@ const validator = require('validator')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const crypto = require('crypto')
-const {decrypt}  = require('./../utils/hashHandler')
 
 const EliteAdminSchema = new mongoose.Schema({
     name:{

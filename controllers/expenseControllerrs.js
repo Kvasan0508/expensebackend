@@ -1,5 +1,6 @@
-const Expense = require("./../models/expenseModel");
-const sendToken = require("./../utils/jwt");
+const path = require('path')
+const Expense = require("../models/expenseModel");
+const sendToken = require("../utils/jwt");
 
 exports.addExpense = async (req, res, next) => {
   const { totalAmount, expenses, userid } = req.body;

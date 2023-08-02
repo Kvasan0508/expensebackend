@@ -1,10 +1,15 @@
 const express = require("express");
-const {getExpense,addExpense
-} = require("./../controllers/expenseControllerrs");
+const path = require('path')
+const eexpenseControllersPath = path.join(__dirname, '../controllers/expenseControllerrs');
+
+const {getExpense,addExpense} = require(eexpenseControllersPath);
+
+const middlerwarePath = path.join(__dirname,"../middlewares/authenticate")
+
 const {
   isAuthenticated,
   authorizeRoles,
-} = require("./../middlewares/authenticate");
+} = require(middlerwarePath);
 
 const router = express.Router();
 

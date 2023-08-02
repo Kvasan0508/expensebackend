@@ -1,7 +1,7 @@
 const sendToken = require("./jwt");
 const sendEmail = require("./email");
 const crypto = require("crypto");
-const ErrorHandler = require("./Errorhandler");
+const ErrorHandler = require("./ErrorHandler");
 var chargebee = require("chargebee");
 
 // const sendToken = require("./jwt");
